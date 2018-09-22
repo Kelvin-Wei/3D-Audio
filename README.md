@@ -1,2 +1,3 @@
-# practice
-practice with small project
+## Practice
+---
+practice with small projects

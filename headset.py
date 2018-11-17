@@ -81,7 +81,7 @@ class Audio3D():
 
     def perform(self, audio_file, rate, level, direction, outp_file):
         track, track_param = self.__load_audio(audio_file)
-        _, track_scale = self.__norm(track)
+        track, track_scale = self.__norm(track)
         duration = track_param[3] / track_param[2]
         frame_per_rate = track_param[2] / rate
         outp_track = self.__run(track, self.__hrtf_dict["level%d" % level], duration, track_param[3], frame_per_rate, rate, direction)

@@ -86,10 +86,7 @@ class Audio3D():
         frame_per_rate = track_param[2] / rate
         outp_track = self.__run(track, self.__hrtf_dict["level%d" % level], duration, track_param[3], frame_per_rate, rate, direction)
         outp_track = self.__norm(outp_track)[0] * track_scale
-        if isinstance(outp_file, str):
-            self.__save_audio(outp_file, track_param, outp_track)
-        else:
-            self.__save_audio(outp_file(audio_file), track_param, outp_track)
+        self.__save_audio(outp_file, track_param, outp_track)
 
 if __name__ == "__main__":
     args = parser.parse_args()
